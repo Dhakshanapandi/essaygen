@@ -1,6 +1,7 @@
 import "./globals.css";
 import { Inter, Merriweather } from "next/font/google";
 import Link from "next/link";
+import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const merriweather = Merriweather({
@@ -39,6 +40,21 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${inter.variable} ${merriweather.variable}`}>
+      <head>
+        {/* Google Analytics */}
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-NNKXPPZ140"
+        />
+        <Script id="google-analytics">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-NNKXPPZ140');
+          `}
+        </Script>
+      </head>
       <body className="bg-white text-gray-900 font-sans flex flex-col min-h-screen scroll-smooth">
         {/* Navbar */}
         <header className="bg-white border-b sticky top-0 z-10">
