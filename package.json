@@ -2,12 +2,13 @@
   "name": "ai-assignment-generator",
   "version": "0.1.0",
   "private": true,
-  "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build --turbopack",
-    "start": "next start",
-    "lint": "eslint"
-  },
+ "scripts": {
+  "dev": "next dev --turbopack",
+  "build": "next build",
+  "start": "next start",
+  "lint": "next lint"
+},
+
   "dependencies": {
     "@next/font": "^14.2.15",
     "@radix-ui/react-scroll-area": "^1.2.10",
