@@ -1,26 +1,102 @@
 @import "tailwindcss";
 
+/* Root palette */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #ffffff; /* Notion uses flat white */
+  --foreground: #1a1a1a; /* dark gray, not pure black */
+  --border: #e5e5e5;     /* subtle divider */
+  --muted: #737373;      /* muted text */
+  --card: #ffffff;
+  --essay-font: "Merriweather", serif;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-border: var(--border);
+  --color-muted: var(--muted);
+  --color-card: var(--card);
+  --font-sans: var(--font-inter), sans-serif;
+  --font-serif: var(--essay-font);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* Base */
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
 }
+
+/* Navbar */
+.navbar {
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+/* Card */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+}
+
+/* Essay */
+.essay-text {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  line-height: 1.75;
+  max-width: 700px;
+  margin: 0 auto;
+  color: var(--foreground);
+}
+
+.essay-text h2 {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  color: var(--foreground);
+}
+
+/* Typing caret */
+.typing-caret::after {
+  content: "|";
+  animation: blink 1s infinite;
+  margin-left: 2px;
+  color: var(--muted);
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #1a1a1a;
+  --border: #e5e5e5;
+  --muted: #737373;
+  --card: #ffffff;
+  --accent: #10b981; /* Emerald green */
+  --accent-hover: #059669; /* Darker green */
+  --essay-font: "Merriweather", serif;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-border: var(--border);
+  --color-muted: var(--muted);
+  --color-card: var(--card);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --font-sans: var(--font-inter), sans-serif;
+  --font-serif: var(--essay-font);
+}
+
