@@ -32,15 +32,8 @@ export async function POST(req: Request) {
       temperature: 0.6,
     });
 
-    // Debug log (optional, remove in production)
-    console.log("Groq raw response:", JSON.stringify(response, null, 2));
-
     // Safely extract essay content
-    const rawEssay =
-      response?.choices?.[0]?.message?.content ??
-      response?.choices?.[0]?.text ??
-      "";
-
+    const rawEssay = response?.choices?.[0]?.message?.content ?? "";
     const essay = rawEssay.trim();
 
     // If still empty, fallback
