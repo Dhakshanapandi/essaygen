@@ -54,6 +54,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             gtag('config', 'G-NNKXPPZ140');
           `}
         </Script>
+        <meta name="google-site-verification" content="_QzYi3Br6Ic3XFFWrTVTChKIypP4gf_eSvbfKjsveIY" />
+
       </head>
       <body className="bg-white text-gray-900 font-sans flex flex-col min-h-screen scroll-smooth">
         {/* Navbar */}

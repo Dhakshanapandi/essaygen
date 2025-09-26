@@ -86,7 +86,7 @@ export default function Home() {
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-6 p-4 sm:p-6">
         {/* Input card */}
         <div className="card p-6 lg:col-span-1 bg-white shadow rounded-lg">
-          <h2 className="text-base font-medium mb-4">Enter Details</h2>
+          <h2 className="text-base font-medium mb-4">Enter Details</h2> 
 
           <input
             type="text"
